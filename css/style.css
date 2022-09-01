@@ -211,11 +211,7 @@ ul {
   display: flex;
 }
 
-.header .main-nav>li:hover .mega-menu {
-  opacity: 1;
-  z-index: 100;
-  top: calc(100% + 1px);
-}
+
 
 @media (max-width: 767px) {
   .header .main-nav {
@@ -277,6 +273,12 @@ ul {
   top: calc(100% + 50px);
   opacity: 0;
   transition: top var(--main-duration), opacity var(--main-duration);
+}
+
+.header .main-nav > li .show {
+  opacity: 1;
+  z-index: 100;
+  top: calc(100% + 1px);
 }
 
 @media (max-width: 767px) {
