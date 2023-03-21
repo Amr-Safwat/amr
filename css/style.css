@@ -1072,6 +1072,8 @@ ul {
   height: 100%;
   background-color: var(--main-color);
   animation: fill-bar .5s linear;
+  transition: .5s;
+  width: 0;
 }
 
 @keyframes fill-bar {
