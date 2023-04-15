@@ -8,12 +8,29 @@ link.onclick = () => {
 let skillsSection = document.querySelector('.our-skills');
 let progs = document.querySelectorAll('.progress-bar');
 
+// Stats Section
+let stats = document.querySelector('.stats');
+let nums = document.querySelectorAll('.number');
+
 window.onscroll = function () {
 	if (window.scrollY >= skillsSection.offsetTop) {
 		progs.forEach((prog) => {
 			prog.style.width = prog.dataset.width;
 		});
 	}
+// Stats Section
+  if(this.scrollY >= stats.offsetTop) {
+    nums.forEach((num) => {
+      let id = setInterval(() => {
+
+        if(num.innerHTML !== num.dataset.goal) {
+          num.innerHTML++;
+        }else {
+          clearInterval(id);
+        }
+      }, 20);
+    });
+  }
 };
 // Skills Section
 // Events Section
@@ -39,25 +56,3 @@ let counter = setInterval(() => {
 	spans[3].innerHTML = seconds;
 }, 1000);
 // Events Section
-
-// Stats Section
-let stats = document.querySelector('.stats');
-let nums = document.querySelectorAll('.number');
-
-window.onscroll = function () {
-  if(this.scrollY >= stats.offsetTop) {
-    nums.forEach((num) => {
-      let id = setInterval(() => {
-
-        if(num.innerHTML !== num.dataset.goal) {
-          num.innerHTML++;
-        }else {
-          clearInterval(id);
-        }
-      }, 5);
-    });
-  }
-}
-
-console.log(nums);
-// Stats Section
